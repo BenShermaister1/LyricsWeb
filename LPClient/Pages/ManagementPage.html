@@ -1,0 +1,579 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Lyrics For All</title>
+    <!--
+
+    Template 2101 Insertion
+
+    http://www.tooplate.com/view/2101-insertion
+
+    -->
+    <!-- load CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">        <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">                                            <!-- https://getbootstrap.com/ -->
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">                                      <!-- Font awesome -->
+    <link rel="stylesheet" href="css/tooplate-style.css">                                           <!-- Templatemo style -->
+    <link href="css/SignIn.css" rel="stylesheet" />
+    <link href="css/managementcss.css" rel="stylesheet" />
+    <script>
+        var renderPage = true;
+
+        if (navigator.userAgent.indexOf('MSIE') !== -1
+            || navigator.appVersion.indexOf('Trident/') > 0) {
+            /* Microsoft Internet Explorer detected in. */
+            alert("Please view this in a modern browser such as Chrome or Microsoft Edge.");
+            renderPage = false;
+        }
+    </script>
+    <script src="js/tablesort.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!--swal-->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+            crossorigin="anonymous"></script>
+    <script src="js/ajaxCalls.js"></script>
+
+    <script>
+        //check if user connect already
+        $(document).ready(function () {
+
+            userEmail = localStorage.getItem("Email");
+            if (userEmail !== null && userEmail !== undefined && userEmail !== '') {
+                enterUser(userEmail);
+            }
+            else {
+                document.getElementById('disconnect').style.display = 'none';
+            }
+            if (userEmail == '"admin@gmail.com"') {
+                document.getElementById('mngpage').style.display = 'block';
+            }
+        });
+
+        function enterUser(userEmail) {
+
+            document.getElementById('disconnect').style.display = 'block';
+            document.getElementById('signin').style.display = 'none';
+
+        }
+
+        /*!-----------------------disconnect user func------------------------------------------------------------!*/
+        function disConnect() {
+
+            document.getElementById('signin').style.display = 'block';
+            document.getElementById('disconnect').style.display = 'none';
+
+            localStorage.clear("Email");
+            localStorage.clear("Data");
+            localStorage.clear("searchParameters");
+        }
+
+        /*!-----------------------Sign In function------------------------------------------------------------!*/
+        //open login form
+        function openForm() {
+            document.getElementById("signinForm").style.display = "block";
+        }
+        // close login/sign up form
+        function closeForm() {
+            document.getElementById("signinForm").style.display = "none";
+            document.getElementById("signupForm").style.display = "none";
+            document.getElementById("infoPopUp").style.display = "none"
+        }
+        //open sign up form
+        function signUpForm() {
+            document.getElementById("signinForm").style.display = "none";
+            document.getElementById("signupForm").style.display = "block";
+        }
+        //Show password for user when sign up
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("passwordInput");
+            var showPasswordCheckbox = document.getElementById("showPassword");
+
+            if (showPasswordCheckbox.checked) {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+        }
+
+        /*!-----------------------LogIn to DB function------------------------------------------------------------!*/
+        function LogIn(event) {
+
+            event.preventDefault();
+
+            // Access form data
+            var email = document.getElementById("emailL").value;
+            var password = document.getElementById("pswL").value;
+
+            const qs = `email=${email}&password=${password}`;
+            const api = `https://localhost:7298/api/Users/ValidLogin?${qs}`;
+
+            const api2 = "https://localhost:7298/api/Users/ValidLogin?email=" + email + "&password=" + password;
+
+            ajaxCall("GET", api, "", LogInSucceesCB, LogInErrorCB);
+            return false;
+        }
+
+        function LogInSucceesCB(userConnect) {
+            Swal.fire({
+                position: 'fixed',
+                icon: 'success',
+                title: 'Log In successfully!',
+                showConfirmButton: false,
+                timer: 1500
+            })
+
+            document.getElementById("signin").style.display = 'none';
+            document.getElementById("disconnect").style.display = 'block';
+            document.getElementById("signinForm").style = 'none';
+            var email = document.getElementById("emailL").value;
+            localStorage.setItem("Email", JSON.stringify(email));
+
+            localStorage.setItem("UserConnect", JSON.stringify(userConnect));
+
+        }
+
+        function LogInErrorCB(data) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+            })
+        }
+
+        /*!-----------------------Sign Up function------------------------------------------------------------!*/
+
+        function SignUp(event) {
+
+            event.preventDefault();
+
+            // Access form data
+            var email = document.getElementById("emailS").value;
+            var username = document.getElementById("usernameS").value;
+            var password = document.getElementById("passwordInput").value;
+
+
+            userSignUp = {
+                Id: 0,
+                Email: email,
+                Username: username,
+                Password: password,
+                RegDate: ""
+            }
+
+            const api = `https://localhost:7298/api/Users`;
+            ajaxCall("POST", api, JSON.stringify(userSignUp), SignUpSucceesCB, SignUpErrorCB);
+            return false;
+        }
+
+        function SignUpSucceesCB() {
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Registration was successful!',
+                showConfirmButton: false,
+                timer: 1500
+            })
+            document.getElementById("signupForm").style = 'none';
+            document.getElementsByClassName("form-popup").style = 'none';
+
+
+        }
+        function SignUpErrorCB(err) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+            })
+        }
+
+        //------------------------------------------------------------------------
+        //                         GET ALL USER FUNCTION
+        //------------------------------------------------------------------------
+
+        function GetAllUsers() {
+
+            api = 'https://localhost:7298/api/Users';
+            ajaxCall("GET", api, "", GetAllUsersSCB, GetAllUsersECB);
+            return false;
+        }
+
+        function GetAllUsersSCB(data) {
+            console.log(data);
+            str = "";
+
+            for (var i = 0; i < data.length; i++) {
+                str += '<tr>';
+                str += `<td>${data[i].id}</td>`;
+                str += `<td>${data[i].email}</td>`;
+                str += `<td>${data[i].username}</td>`;
+                str += `<td>${data[i].regDate.substr(0, 10)}</td>`;
+                str += `<td><a href="#" onclick="GetPlayListByUserId(${data[i].id})">click to see playlist</a></td>`;
+                str += '</tr>';
+            }
+
+            document.getElementById('Userst').innerHTML = str;
+
+
+        }
+
+        function GetAllUsersECB(err) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+            })
+        }
+
+        function GetPlayListByUserId(user_id) {
+            api = `https://localhost:7298/api/Users/${user_id}`;
+            ajaxCall("GET", api, "", GetPlayListByUserIdSCB, GetPlayListByUserIdECB);
+            return false;
+        }
+
+        function GetPlayListByUserIdSCB(data) {
+            console.log(data);
+            document.getElementById("infoPopUp").style.display = "block";
+            let str = "";
+            str += "<h1>The favorite songs of the user:</h1>";
+            for (var i = 0; i < data.length; i++) {
+                str += `<h4>${i+1}. ${data[i].song} by ${data[i].artist.name}</h4>`;
+            }
+
+            //str += `<h1>${data.artist.name}</h1>`;
+            //str += `<h5>${data.artist.bio.summary}</h5>`;
+            str += `<button type="button" class="btnicancel" onclick="closeForm(); return false;">Close</button>`;
+            document.getElementById('infoPopUp').innerHTML = str;
+        }
+
+        function GetPlayListByUserIdECB(err) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+            })
+        }
+
+        function GetAllSongsWithFav() {
+            api = 'https://localhost:7298/api/Song/GetAllSongsWithFav';
+            ajaxCall("GET", api, "", GetAllSongsWithFavSCB, GetAllSongsWithFavECB);
+            return false;
+        }
+
+        function GetAllSongsWithFavSCB(data) {
+            console.log(data);
+            str = "";
+
+            for (var i = 0; i < data.length; i++) {
+                str += '<tr>';
+                str += `<td>${data[i].song}</td>`;
+                str += `<td>${data[i].artist.name}</td>`;
+                str += `<td>${data[i].favCounts}</td>`;
+                str += '</tr>';
+            }
+
+            document.getElementById('Songst').innerHTML = str;
+        }
+
+        function GetAllSongsWithFavECB(err) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+            })
+        }
+
+        function GetAllArtistWithFav() {
+            api = 'https://localhost:7298/api/Artist/GetAllArtistWithFav';
+            ajaxCall("GET", api, "", GetAllArtistWithFavSCB, GetAllArtistWithFavECB);
+            return false;
+        }
+
+        function GetAllArtistWithFavSCB(data) {
+            console.log(data);
+            str = "";
+
+            for (var i = 0; i < data.length; i++) {
+                str += '<tr>';
+                str += `<td>${data[i].id}</td>`;
+                str += `<td>${data[i].name}</td>`;
+                str += `<td>${data[i].favCounts}</td>`;
+                str += '</tr>';
+            }
+
+            document.getElementById('Artistst').innerHTML = str;
+        }
+
+        function GetAllArtistWithFavECB(err) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+            })
+        }
+
+        function openPage(pageName, elmnt, color) {
+            if (pageName == 'Users') {
+                GetAllUsers();
+            }
+            if (pageName == 'Songs') {
+                GetAllSongsWithFav();
+            }
+            if (pageName == 'Artists') {
+                GetAllArtistWithFav();
+            }
+            // Hide all elements with class="tabcontent" by default */
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Remove the background color of all tablinks/buttons
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+
+            // Show the specific tab content
+            document.getElementById(pageName).style.display = "block";
+
+            // Add the specific color to the button used to open the tab content
+            elmnt.style.backgroundColor = color;
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+
+    <!-- Loader -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+
+    <div class="tm-main">
+        <div class="form-popupdet" id="infoPopUp" style="display:none">
+
+
+        </div>
+        <div class="tm-welcome-section">
+            <div class="container tm-navbar-container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <nav class="navbar navbar-expand-sm">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item active">
+                                    <a href="index.html" class="nav-link tm-nav-link tm-text-white active">Home</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a href="artistList.html" class="nav-link tm-nav-link tm-text-white">Artists</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a href="quizz.html" class="nav-link tm-nav-link tm-text-white">Quiz</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a href="PlayList_user.html" class="nav-link tm-nav-link tm-text-white">Playlist</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="about.html" class="nav-link tm-nav-link tm-text-white">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="mngpage" class="nav-link tm-nav-link tm-text-white open-button" href="ManagementPage.html" style="display:none">Management</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="signin" class="nav-link tm-nav-link tm-text-white open-button" href="#" onclick="openForm()">Sign In</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="disconnect" class="nav-link tm-nav-link tm-text-white open-button" href="#" onclick="disConnect()" display="none">Disconnect</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="container text-center tm-welcome-container">
+                <div class="tm-welcome">
+                    <i class="fas tm-fa-big fa-music tm-fa-mb-big"></i>
+                    <h1 class="text-uppercase mb-3 tm-site-name" style="font: revert;">Management Page</h1>
+                    <!--<p class="tm-site-description">New HTML Website Template</p>-->
+                </div>
+            </div>
+
+        </div>
+        <!------------------------sign in-------------------------->
+
+        <div class="form-popup" id="signinForm" style="display:none">
+            <form action="/action_page.php" class="form-container" onsubmit="LogIn(event)">
+                <h1>Login</h1>
+
+                <label for="email"><b>Email</b></label>
+                <input id="emailL" type="text" placeholder="Enter Email" name="email" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input id="pswL" type="password" placeholder="Enter Password" name="psw" required>
+
+                <button id="btnL" type="submit" class="btn" onclick="">Login</button>
+                <p>Don’t have an account? <a href="#" onclick="signUpForm()">Sign Up</a></p>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+
+        <!------------------------ sign up -------------------------->
+        <div class="form-popup" id="signupForm" style="display:none">
+            <form action="/action_page.php" class="form-container" onsubmit="SignUp(event)">
+                <h1>Sign Up</h1>
+
+                <label for="email"><b>Email</b></label>
+                <input id="emailS" type="text" placeholder="Enter Email" name="email" required>
+
+                <label for="username"><b>Username</b></label>
+                <input id="usernameS" type="text" placeholder="Enter Username" name="username" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" id="passwordInput" required>
+
+                <input type="checkbox" id="showPassword" onchange="togglePasswordVisibility()">
+                <label for="showPassword">Show Password</label>
+
+                <button type="submit" class="btn">Sign Up</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+
+
+
+
+        <!------------------------ container -------------------------->
+        <div class="container" style="max-width:100%;padding-right: 0px; padding-left: 0px;">
+            <div class="tabscontainer">
+
+                <button class="tablink" onclick="openPage('Users', this, 'black')">Users</button>
+                <button class="tablink" onclick="openPage('Songs', this, 'black')" id="defaultOpen">Songs</button>
+                <button class="tablink" onclick="openPage('Artists', this, 'black')">Artists</button>
+
+
+                <div id="Users" class="tabcontent ">
+                    <h3>Users info</h3>
+                    <input type="text" class="form-container" data-table-id="dataTableUsers" placeholder="Search..." style="border-radius: 10px; margin-left: auto; margin-right: auto">
+                    <table id="dataTableUsers" class="content-table table-sortable">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>E-mail</th>
+                                <th>Username</th>
+                                <th>Registration Date</th>
+                                <th>Favorite Songs</th>
+                            </tr>
+                        </thead>
+                        <tbody id="Userst">
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="Songs" class="tabcontent">
+                    <h3>Songs</h3>
+                    <input type="text" class="form-container" data-table-id="dataTableSongs" placeholder="Search..." style="border-radius: 10px; margin-left: auto; margin-right: auto">
+                    <table id="dataTableSongs" class="content-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Artist</th>
+                                <th>How many added to favorites</th>
+                            </tr>
+                        </thead>
+                        <tbody id="Songst">
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="Artists" class="tabcontent">
+                    <h3>Artists</h3>
+                    <input type="text" class="form-container" data-table-id="dataTableArtists" placeholder="Search..." style="border-radius: 10px; margin-left: auto; margin-right: auto">
+                    <table id="dataTableArtists" class="content-table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>How many added to favorite</th>
+                            </tr>
+                        </thead>
+                        <tbody id="Artistst">
+                        </tbody>
+                    </table>
+                </div>
+
+                
+
+            </div>
+
+        </div> <!-- .container -->
+
+    </div> <!-- .main -->
+    <!-- load JS -->
+    <script>
+        // Get references to the input field and the table
+        const searchInputs = document.querySelectorAll('.form-container');
+
+        // Add event listener to each search input
+        searchInputs.forEach((searchInput) => {
+            searchInput.addEventListener('input', function () {
+                const searchTerm = searchInput.value.toLowerCase();
+                const dataTableId = searchInput.dataset.tableId;
+                const dataTable = document.getElementById(dataTableId);
+                const rows = dataTable.getElementsByTagName('tr');
+
+                // Loop through all the rows, except the header row (index 0)
+                for (let i = 1; i < rows.length; i++) {
+                    const row = rows[i];
+                    const columns = row.getElementsByTagName('td');
+                    let found = false;
+
+                    // Loop through the columns in the current row
+                    for (let j = 0; j < columns.length; j++) {
+                        const cellValue = columns[j].textContent.toLowerCase();
+
+                        // Check if the cell value contains the search term
+                        if (cellValue.includes(searchTerm)) {
+                            found = true;
+                            break; // No need to check other columns in this row
+                        }
+                    }
+
+                    // Show/hide the row based on whether it matches the search term
+                    if (found) {
+                        row.style.display = ''; // Show the row
+                    } else {
+                        row.style.display = 'none'; // Hide the row
+                    }
+                }
+            });
+        });
+
+    </script>
+    <script>
+
+        /* DOM is ready
+        ------------------------------------------------*/
+        $(function () {
+
+            if (renderPage) {
+                $('body').addClass('loaded');
+            }
+
+            $('.tm-current-year').text(new Date().getFullYear());  // Update year in copyright
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,482 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Lyrics For All</title>
+    <!--
+
+    Template 2101 Insertion
+
+    http://www.tooplate.com/view/2101-insertion
+
+    -->
+    <!-- load CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">        <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">                                            <!-- https://getbootstrap.com/ -->
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">                                      <!-- Font awesome -->
+    <link rel="stylesheet" href="css/tooplate-style.css">                                           <!-- Templatemo style -->
+    <link href="css/quizcss.css" rel="stylesheet" />
+
+    <script>
+        var renderPage = true;
+
+        if (navigator.userAgent.indexOf('MSIE') !== -1
+            || navigator.appVersion.indexOf('Trident/') > 0) {
+            /* Microsoft Internet Explorer detected in. */
+            alert("Please view this in a modern browser such as Chrome or Microsoft Edge.");
+            renderPage = false;
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!--swal-->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+            crossorigin="anonymous"></script>
+    <script src="js/ajaxCalls.js"></script>
+
+    <script>
+        //check if user connect already
+        $(document).ready(function () {
+
+            userEmail = localStorage.getItem("Email");
+            if (userEmail !== null && userEmail !== undefined && userEmail !== '') {
+                enterUser(userEmail);
+            }
+            else {
+                document.getElementById('disconnect').style.display = 'none';
+            }
+            if (userEmail == '"admin@gmail.com"') {
+                document.getElementById('mngpage').style.display = 'block';
+            }
+            GetDetailsForQuiz();
+
+        });
+
+        function enterUser(userEmail) {
+
+            document.getElementById('disconnect').style.display = 'block';
+            document.getElementById('signin').style.display = 'none';
+
+        }
+
+        /*!-----------------------disconnect user func------------------------------------------------------------!*/
+        function disConnect() {
+
+            document.getElementById('signin').style.display = 'block';
+            document.getElementById('disconnect').style.display = 'none';
+
+            localStorage.clear("Email");
+            localStorage.clear("Data");
+            window.location.href = "index.html";
+        }
+
+        /*!-----------------------Sign In function------------------------------------------------------------!*/
+        //open login form
+        function openForm() {
+            document.getElementById("signinForm").style.display = "block";
+        }
+        // close login/sign up form
+        function closeForm() {
+            document.getElementById("signinForm").style.display = "none";
+            document.getElementById("signupForm").style.display = "none";
+        }
+        //open sign up form
+        function signUpForm() {
+            document.getElementById("signinForm").style.display = "none";
+            document.getElementById("signupForm").style.display = "block";
+        }
+        //Show password for user when sign up
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("passwordInput");
+            var showPasswordCheckbox = document.getElementById("showPassword");
+
+            if (showPasswordCheckbox.checked) {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+        }
+
+        /*!-----------------------LogIn to DB function------------------------------------------------------------!*/
+        function LogIn(event) {
+
+            event.preventDefault();
+
+            // Access form data
+            var email = document.getElementById("emailL").value;
+            var password = document.getElementById("pswL").value;
+
+            const qs = `email=${email}&password=${password}`;
+            const api = `https://localhost:7298/api/Users/ValidLogin?${qs}`;
+
+            const api2 = "https://localhost:7298/api/Users/ValidLogin?email=" + email + "&password=" + password;
+
+            ajaxCall("GET", api, "", LogInSucceesCB, LogInErrorCB);
+            return false;
+        }
+
+        function LogInSucceesCB(userConnect) {
+            Swal.fire({
+                position: 'fixed',
+                icon: 'success',
+                title: 'Log In successfully!',
+                showConfirmButton: false,
+                timer: 1500
+            })
+
+            document.getElementById("signin").style.display = 'none';
+            document.getElementById("disconnect").style.display = 'block';
+            document.getElementById("signinForm").style = 'none';
+            var email = document.getElementById("emailL").value;
+            localStorage.setItem("Email", JSON.stringify(email));
+
+            localStorage.setItem("UserConnect", JSON.stringify(userConnect));
+
+        }
+
+        function LogInErrorCB(data) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+            })
+        }
+
+        /*!-----------------------Sign Up function------------------------------------------------------------!*/
+
+        function SignUp(event) {
+
+            event.preventDefault();
+
+            // Access form data
+            var email = document.getElementById("emailS").value;
+            var username = document.getElementById("usernameS").value;
+            var password = document.getElementById("passwordInput").value;
+
+
+            userSignUp = {
+                Id: 0,
+                Email: email,
+                Username: username,
+                Password: password,
+                RegDate: ""
+            }
+
+            const api = `https://localhost:7298/api/Users`;
+            ajaxCall("POST", api, JSON.stringify(userSignUp), SignUpSucceesCB, SignUpErrorCB);
+            return false;
+        }
+
+        function SignUpSucceesCB() {
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Registration was successful!',
+                showConfirmButton: false,
+                timer: 1500
+            })
+            document.getElementById("signupForm").style = 'none';
+            document.getElementsByClassName("form-popup").style = 'none';
+
+
+        }
+        function SignUpErrorCB(err) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+            })
+        }
+
+        //-----------------------------------------------------------
+        //         RENDER RANDON SONGS TO INDEX
+        //-----------------------------------------------------------
+
+        const questType = {
+            who: "who sang the song ",
+            which: "Which of the following songs did the singer "
+        };
+
+        const quizData = [];
+        const totalOptions = 3;
+
+        function GetDetailsForQuiz() {
+            songObj = {
+                artist: "",
+                song: "",
+                text: ""
+            }
+            api = "https://localhost:7298/api/Song"
+            ajaxCall("GET", api, JSON.stringify(songObj), GetDetailsForQuizSucceesCB, GetDetailsForQuizErrorCB);
+            return false;
+        }
+        //const song;
+        //const questTypeKeys;
+        //const randomKeyType;
+        //const randomValueType = questType[randomKeyType];
+
+        function GetDetailsForQuizSucceesCB(data) {
+            console.log(data);
+
+            for (var i = 0; i < 10; i++) {
+                let song = data[Math.floor(Math.random() * data.length)];
+                let questTypeKeys = Object.keys(questType);
+                let randomKeyType = questTypeKeys[Math.floor(Math.random() * questTypeKeys.length)];
+                let randomValueType = questType[randomKeyType];
+                let question;
+                let correctAnswer;
+                let answerOptions = [];
+
+                switch (randomKeyType) {
+                    case "who":
+                        question = randomValueType + song.song + "?";
+                        correctAnswer = song.artist.name;
+                        answerOptions = shuffleArray(data.map((item) => item.artist.name)).slice(0, totalOptions);
+                        answerOptions.push(correctAnswer);
+                        break;
+                    case "which":
+                        question = randomValueType + song.artist.name + "?";
+                        correctAnswer = song.song;
+                        answerOptions = shuffleArray(data.map((item) => item.song)).slice(0, totalOptions);
+                        answerOptions.push(correctAnswer);
+                        break;
+                    default:
+                        break;
+
+                }
+
+                const questionObj = {
+                    question: question,
+                    options: shuffleArray(answerOptions),
+                    correctAnswer: correctAnswer,
+                };
+                console.log(quizData);
+
+                quizData.push(questionObj);
+            }
+
+            const quiz = document.getElementById("quiz");
+            const answerElements = document.querySelectorAll(".answer");
+            const questionElement = document.getElementById("question");
+            const a_text = document.getElementById("a_text");
+            const b_text = document.getElementById("b_text");
+            const c_text = document.getElementById("c_text");
+            const d_text = document.getElementById("d_text");
+            const submitButton = document.getElementById("buttonquiz");
+
+            let currentQuiz = 0;
+            let score = 0;
+
+            const deselectAnswers = () => {
+                answerElements.forEach((answer) => (answer.checked = false));
+            };
+
+            const getSelected = () => {
+                let answer;
+                answerElements.forEach((answerElement) => {
+                    if (answerElement.checked) answer = answerElement.id;
+                });
+                return answer;
+            };
+
+            const loadQuiz = () => {
+                deselectAnswers();
+                let currentQuizData = quizData[currentQuiz];
+                questionElement.innerText = currentQuizData.question;
+                a_text.innerText = currentQuizData.options[0];
+                b_text.innerText = currentQuizData.options[1];
+                c_text.innerText = currentQuizData.options[2];
+                d_text.innerText = currentQuizData.options[3];
+            };
+
+            loadQuiz();
+
+            submitButton.addEventListener("click", () => {
+                let answer = document.getElementById(`${getSelected()}_text`).textContent;
+
+
+
+                if (answer) {
+                    if (answer == quizData[currentQuiz].correctAnswer) score++;
+                    currentQuiz++;
+                    if (currentQuiz < quizData.length) loadQuiz();
+                    else {
+                        quiz.innerHTML = `
+            <h2>You answered ${score}/${quizData.length} questions correctly</h2>
+            <button id="buttonquiz" onclick="history.go(0)">Play Again</button>
+        ` // location.reload() won't work in CodePen for security reasons;
+                    }
+                }
+            });
+        }
+
+        function GetDetailsForQuizErrorCB(err) {
+            alert(err);
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+    <!-- Loader -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+
+    <div class="tm-main">
+
+        <div class="tm-welcome-section">
+            <div class="container tm-navbar-container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <nav class="navbar navbar-expand-sm">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item active">
+                                    <a href="index.html" class="nav-link tm-nav-link tm-text-white active">Home</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a href="artistList.html" class="nav-link tm-nav-link tm-text-white">Artists</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a href="quizz.html" class="nav-link tm-nav-link tm-text-white">Quiz</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a href="PlayList_user.html" class="nav-link tm-nav-link tm-text-white">Playlist</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="about.html" class="nav-link tm-nav-link tm-text-white">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="mngpage" class="nav-link tm-nav-link tm-text-white open-button" href="ManagementPage.html" onclick="" style="display:none">Management</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="signin" class="nav-link tm-nav-link tm-text-white open-button" href="#" onclick="openForm()">Sign In</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="disconnect" class="nav-link tm-nav-link tm-text-white open-button" href="#" onclick="disConnect()" display="none">Disconnect</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="container text-center tm-welcome-container">
+                <div class="tm-welcome">
+                    <i class="fas tm-fa-big fa-music tm-fa-mb-big"></i>
+                    <h1 class="text-uppercase mb-3 tm-site-name">Lyrics For All</h1>
+                    <!--<p class="tm-site-description">New HTML Website Template</p>-->
+                </div>
+            </div>
+
+        </div>
+        <!------------------------sign in-------------------------->
+
+        <div class="form-popup" id="signinForm" style="display:none">
+            <form action="/action_page.php" class="form-container" onsubmit="LogIn(event)">
+                <h1>Login</h1>
+
+                <label for="email"><b>Email</b></label>
+                <input id="emailL" type="text" placeholder="Enter Email" name="email" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input id="pswL" type="password" placeholder="Enter Password" name="psw" required>
+
+                <button id="btnL" type="submit" class="btn" onclick="">Login</button>
+                <p>Don’t have an account? <a href="#" onclick="signUpForm()">Sign Up</a></p>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+
+        <!------------------------sign up-------------------------->
+        <div class="form-popup" id="signupForm" style="display:none">
+            <form action="/action_page.php" class="form-container" onsubmit="SignUp(event)">
+                <h1>Sign Up</h1>
+
+                <label for="email"><b>Email</b></label>
+                <input id="emailS" type="text" placeholder="Enter Email" name="email" required>
+
+                <label for="username"><b>Username</b></label>
+                <input id="usernameS" type="text" placeholder="Enter Username" name="username" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" id="passwordInput" required>
+
+                <input type="checkbox" id="showPassword" onchange="togglePasswordVisibility()">
+                <label for="showPassword">Show Password</label>
+
+                <button type="submit" class="btn">Sign Up</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+
+        <div class="container">
+
+            <!-----------------------------------------------------------------------------
+                                Quizzzzzzz!!!!!!!!!!!!!!!!!!!!!!
+            ----------------------------------------------------------------------------->
+
+            <div class="bodyquiz">
+                <div class="quiz-container" id="quiz">
+                    <h2 id="question">Question is loading...</h2>
+                    <ul>
+                        <li>
+                            <input type="radio" name="answer" id="a" class="answer" />
+                            <label for="0" id="a_text">Answer...</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="answer" id="b" class="answer" />
+                            <label for="1" id="b_text">Answer...</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="answer" id="c" class="answer" />
+                            <label for="2" id="c_text">Answer...</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="answer" id="d" class="answer" />
+                            <label for="3" id="d_text">Answer...</label>
+                        </li>
+                    </ul>
+                    <button id="buttonquiz">Submit</button>
+                </div>
+            </div>
+        </div> <!-- .container -->
+
+    </div> <!-- .main -->
+    <!-- load JS -->
+    <script>
+
+        /* DOM is ready
+        ------------------------------------------------*/
+        $(function () {
+
+            if (renderPage) {
+                $('body').addClass('loaded');
+            }
+
+            $('.tm-current-year').text(new Date().getFullYear());  // Update year in copyright
+        });
+
+    </script>
+</body>
+</html>

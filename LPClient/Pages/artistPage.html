@@ -1,0 +1,487 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Lyrics For All</title>
+    <!--
+
+    Template 2101 Insertion
+
+    http://www.tooplate.com/view/2101-insertion
+
+    -->
+    <!-- load CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">        <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">                                            <!-- https://getbootstrap.com/ -->
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">                                      <!-- Font awesome -->
+    <link rel="stylesheet" href="css/tooplate-style.css">                                           <!-- Templatemo style -->
+    <link href="css/SignIn.css" rel="stylesheet" />
+    <link href="css/artistpagecss.css" rel="stylesheet" />
+
+
+
+    <script>
+        var renderPage = true;
+
+        if (navigator.userAgent.indexOf('MSIE') !== -1
+            || navigator.appVersion.indexOf('Trident/') > 0) {
+            /* Microsoft Internet Explorer detected in. */
+            alert("Please view this in a modern browser such as Chrome or Microsoft Edge.");
+            renderPage = false;
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!--swal-->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+            crossorigin="anonymous"></script>
+    <script src="js/ajaxCalls.js"></script>
+
+    <script>
+        //check if user connect already
+        $(document).ready(function () {
+            artistId = localStorage.getItem("ATL");
+            songId = localStorage.getItem("STL");
+            userEmail = localStorage.getItem("Email");
+
+            userStorage = localStorage.getItem("UserConnect");
+            user = JSON.parse(userStorage);
+
+            if (userEmail !== null && userEmail !== undefined && userEmail !== '') {
+                enterUser(userEmail);
+            }
+            else {
+                document.getElementById('disconnect').style.display = 'none';
+            }
+
+            if (userEmail == '"admin@gmail.com"') {
+                document.getElementById('mngpage').style.display = 'block';
+            }
+
+            ArtistInfo(artistId);
+            showArtistDet(artistId);
+
+        });
+
+        function enterUser(userEmail) {
+
+            document.getElementById('disconnect').style.display = 'block';
+            document.getElementById('signin').style.display = 'none';
+
+        }
+
+        /*!-----------------------disconnect user func------------------------------------------------------------!*/
+        function disConnect() {
+
+            document.getElementById('signin').style.display = 'block';
+            document.getElementById('disconnect').style.display = 'none';
+            document.getElementById('mngpage').style.display = 'none';
+
+            localStorage.clear("Email");
+            localStorage.clear("Data");
+            localStorage.clear("searchParameters");
+        }
+
+        /*!-----------------------Sign In function------------------------------------------------------------!*/
+        //open login form
+        function openForm() {
+            document.getElementById("signinForm").style.display = "block";
+        }
+        // close login/sign up form
+        function closeForm() {
+            document.getElementById("signinForm").style.display = "none";
+            document.getElementById("signupForm").style.display = "none";
+        }
+        //open sign up form
+        function signUpForm() {
+            document.getElementById("signinForm").style.display = "none";
+            document.getElementById("signupForm").style.display = "block";
+        }
+        //Show password for user when sign up
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("passwordInput");
+            var showPasswordCheckbox = document.getElementById("showPassword");
+
+            if (showPasswordCheckbox.checked) {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+        }
+
+        /*!-----------------------LogIn to DB function------------------------------------------------------------!*/
+        function LogIn(event) {
+
+            event.preventDefault();
+
+            // Access form data
+            var email = document.getElementById("emailL").value;
+            var password = document.getElementById("pswL").value;
+
+            const qs = `email=${email}&password=${password}`;
+            const api = `https://localhost:7298/api/Users/ValidLogin?${qs}`;
+
+            const api2 = "https://localhost:7298/api/Users/ValidLogin?email=" + email + "&password=" + password;
+
+            ajaxCall("GET", api, "", LogInSucceesCB, LogInErrorCB);
+            return false;
+        }
+
+        function LogInSucceesCB(userConnect) {
+
+
+            Swal.fire({
+                position: 'fixed',
+                icon: 'success',
+                title: 'Log In successfully!',
+                showConfirmButton: false,
+                timer: 1500
+            })
+
+            document.getElementById("signin").style.display = 'none';
+            document.getElementById("disconnect").style.display = 'block';
+            document.getElementById("signinForm").style = 'none';
+            var email = document.getElementById("emailL").value;
+            localStorage.setItem("Email", JSON.stringify(email));
+
+            if (email == 'admin@gmail.com') {
+
+                document.getElementById("mngpage").style.display = 'block';
+            }
+            localStorage.setItem("UserConnect", JSON.stringify(userConnect));
+
+        }
+
+        function LogInErrorCB(data) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+            })
+        }
+
+        /*!-----------------------Sign Up function------------------------------------------------------------!*/
+
+        function SignUp(event) {
+
+            event.preventDefault();
+
+            // Access form data
+            var email = document.getElementById("emailS").value;
+            var username = document.getElementById("usernameS").value;
+            var password = document.getElementById("passwordInput").value;
+
+
+            userSignUp = {
+                Id: 0,
+                Email: email,
+                Username: username,
+                Password: password,
+                RegDate: ""
+            }
+
+            const api = `https://localhost:7298/api/Users`;
+            ajaxCall("POST", api, JSON.stringify(userSignUp), SignUpSucceesCB, SignUpErrorCB);
+            return false;
+        }
+
+        function SignUpSucceesCB() {
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'Registration was successful!',
+                showConfirmButton: false,
+                timer: 1500
+            })
+            document.getElementById("signupForm").style = 'none';
+            document.getElementsByClassName("form-popup").style = 'none';
+
+
+        }
+        function SignUpErrorCB(err) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+            })
+        }
+
+        /*!-----------------------navigate To Playlist------------------------------------------------------------!*/
+
+        function navigateToPlaylist() {
+            userEmail = localStorage.getItem("Email");
+            if (userEmail !== null && userEmail !== undefined && userEmail !== '') {
+
+                window.location.href = "PlayList_user.html";
+
+            }
+            else {
+                document.getElementById('disconnect').style.display = 'none';
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'You need to log in first!',
+                })
+            }
+        }
+
+        /*!-----------------------navigate To ArtistList------------------------------------------------------------!*/
+        function navigateToArtistList() {
+            userEmail = localStorage.getItem("Email");
+            if (userEmail !== null && userEmail !== undefined && userEmail !== '') {
+
+                window.location.href = "artistList.html";
+
+            }
+            else {
+                document.getElementById('disconnect').style.display = 'none';
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'You need to log in first!',
+                })
+            }
+        }
+
+        /*!-----------------------navigate To ArtistList------------------------------------------------------------!*/
+        function navigateToArtistList() {
+            userEmail = localStorage.getItem("Email");
+            if (userEmail !== null && userEmail !== undefined && userEmail !== '') {
+
+                window.location.href = "artistList.html";
+
+            }
+            else {
+                document.getElementById('disconnect').style.display = 'none';
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'You need to log in first!',
+                })
+            }
+        }
+        /*!-----------------------navigate To Quiz------------------------------------------------------------!*/
+
+        function navigateToQuiz() {
+            userEmail = localStorage.getItem("Email");
+            if (userEmail !== null && userEmail !== undefined && userEmail !== '') {
+
+                window.location.href = "quizz.html";
+
+            }
+            else {
+                document.getElementById('disconnect').style.display = 'none';
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'You need to log in first!',
+                })
+            }
+        }
+
+        function showArtistDet(id) {
+            api = `https://localhost:7298/api/Artist/${id}`
+            ajaxCall("GET", api, "", showArtistDetSCB, showArtistDetECB);
+            return false;
+        }
+
+        function showArtistDetSCB(data) {
+
+            console.log(data);
+            ArtistSummary(data.name);
+            str = "";
+
+            function ArtistSummary(name) {
+
+                api = `http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${name}&api_key=4ad00cd28b247d4e6f481d411652dd14&format=json`;
+                ajaxCall("GET", api, "", ArtistSummary_SucceesCB, ArtistSummary_ErrorCB);
+            }
+            var summary;
+
+            function ArtistSummary_SucceesCB(a) {
+                console.log(a);
+                str += `<h1>${data.name}</h1><p>${data.favCounts} Liked this artist!</p>`;
+                str += `<h6>${a.artist.bio.summary}</h6><br><br>`;
+                str += `<h3>Generes:</h3><ul>`;
+                for (i = 0; i < a.artist.tags.tag.length; i++) {
+                    str += `<li>${a.artist.tags.tag[i].name}</li>`;
+                }
+                str += `</ul>`;
+                document.getElementById('artdiv').innerHTML = str;
+
+               
+            }
+
+            function ArtistSummary_ErrorCB(err) {
+                alert(err);
+            }
+
+           
+
+        }
+
+        function showArtistDetECB(err) {
+
+        }
+
+        function ArtistInfo(id) {
+
+            api = `https://localhost:7298/api/Song/GetSongsByArtistId?id=${id}`;
+            ajaxCall("GET", api, "", ArtistInfoSCB, ArtistInfoECB);
+        }
+        var summary;
+
+        function ArtistInfoSCB(info) {
+            console.log(info);
+            str2 = "";
+            str2 += `<img src=${info[0].artist.img} style="width:300px; height:300px" alt="Image" class="img-fluid"><br><br>`;
+            str2 += `<h2>More songs</h2>`;
+            for (i = 0; i < info.length; i++) {
+                str2 += `<h5>${i + 1}.<a href="#" onclick="toSongPage(${info[i].id})"> ${info[i].song}</a></h5>`;
+            }
+            document.getElementById('infodiv').innerHTML = str2;
+        }
+
+        function toSongPage(id) {
+            localStorage.setItem("STL", JSON.stringify(id));
+            window.location.href = "songPage.html";
+        }
+        function ArtistInfoECB(err) {
+            alert(err);
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+
+    <!-- Loader -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+
+    <div class="tm-main">
+
+        <div class="tm-welcome-section">
+            <div class="container tm-navbar-container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <nav class="navbar navbar-expand-sm">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item active">
+                                    <a href="index.html" class="nav-link tm-nav-link tm-text-white active">Home</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a href="#" onclick="navigateToArtistList()" class="nav-link tm-nav-link tm-text-white">Artists</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a href="#" onclick="navigateToQuiz()" class="nav-link tm-nav-link tm-text-white">Quiz</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a href="#" onclick="navigateToPlaylist()" class="nav-link tm-nav-link tm-text-white">Playlist</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="about.html" class="nav-link tm-nav-link tm-text-white">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="mngpage" class="nav-link tm-nav-link tm-text-white open-button" href="ManagementPage.html" onclick="" style="display:none">Management</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="signin" class="nav-link tm-nav-link tm-text-white open-button" href="#" onclick="openForm()">Sign In</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="disconnect" class="nav-link tm-nav-link tm-text-white open-button" href="#" onclick="disConnect()" display="none">Disconnect</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="container text-center tm-welcome-container">
+                <div class="tm-welcome">
+                    <i class="fas tm-fa-big fa-music tm-fa-mb-big"></i>
+                    <h1 class="text-uppercase mb-3 tm-site-name" style="font: revert;">Lyrics For All</h1>
+                    <!--<p class="tm-site-description">New HTML Website Template</p>-->
+                </div>
+            </div>
+
+        </div>
+        <!------------------------sign in-------------------------->
+
+        <div class="form-popup" id="signinForm" style="display:none">
+            <form action="/action_page.php" class="form-container" onsubmit="LogIn(event)">
+                <h1>Login</h1>
+
+                <label for="email"><b>Email</b></label>
+                <input id="emailL" type="text" placeholder="Enter Email" name="email" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input id="pswL" type="password" placeholder="Enter Password" name="psw" required>
+
+                <button id="btnL" type="submit" class="btn" onclick="">Login</button>
+                <p>Don’t have an account? <a href="#" onclick="signUpForm()">Sign Up</a></p>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+
+        <!------------------------ sign up -------------------------->
+        <div class="form-popup" id="signupForm" style="display:none">
+            <form action="/action_page.php" class="form-container" onsubmit="SignUp(event)">
+                <h1>Sign Up</h1>
+
+                <label for="email"><b>Email</b></label>
+                <input id="emailS" type="text" placeholder="Enter Email" name="email" required>
+
+                <label for="username"><b>Username</b></label>
+                <input id="usernameS" type="text" placeholder="Enter Username" name="username" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" id="passwordInput" required>
+
+                <input type="checkbox" id="showPassword" onchange="togglePasswordVisibility()">
+                <label for="showPassword">Show Password</label>
+
+                <button type="submit" class="btn">Sign Up</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+        <div id="container">
+            <div id="artdiv">
+
+            </div>
+            <div id="infodiv" >
+                <div id="genere">
+
+                </div>
+            </div>
+        </div>
+
+
+    </div> <!-- .main -->
+    <!-- load JS -->
+    <script>
+
+        /* DOM is ready
+        ------------------------------------------------*/
+        $(function () {
+
+            if (renderPage) {
+                $('body').addClass('loaded');
+            }
+
+            $('.tm-current-year').text(new Date().getFullYear());  // Update year in copyright
+        });
+
+    </script>
+</body>
+</html>

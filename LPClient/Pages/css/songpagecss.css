@@ -1,0 +1,35 @@
+﻿#container {
+    display: flex;
+    /* Optional styles for the container */
+    width: 100%;
+
+}
+
+#lydiv, #infodiv {
+    /* Optional styles for the divs */
+    width:50%;
+    border: 1px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#lydiv {
+    flex: 1; /* This allows the left div to grow and take available space */
+    padding-left:10%;
+    width:50%;
+}
+
+#infodiv {
+
+    justify-content: center; /* Center the content (image) horizontally */
+
+}
+
+    #infodiv img {
+        /* Optional styles for the image */
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+
+

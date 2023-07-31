@@ -1,0 +1,317 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Lyrics For All</title>
+    <!--
+
+    Template 2101 Insertion
+
+    http://www.tooplate.com/view/2101-insertion
+
+    -->
+    <!-- load CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">        <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">                                            <!-- https://getbootstrap.com/ -->
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">                                      <!-- Font awesome -->
+    <link rel="stylesheet" href="css/tooplate-style.css">                                           <!-- Templatemo style -->
+    <link href="css/search.css" rel="stylesheet" />
+    <script>
+        var renderPage = true;
+
+        if (navigator.userAgent.indexOf('MSIE') !== -1
+            || navigator.appVersion.indexOf('Trident/') > 0) {
+            /* Microsoft Internet Explorer detected in. */
+            alert("Please view this in a modern browser such as Chrome or Microsoft Edge.");
+            renderPage = false;
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!--swal-->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+            integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+            crossorigin="anonymous"></script>
+    <script src="js/ajaxCalls.js"></script>
+
+    <script>
+
+        
+
+        $(document).ready(function () {
+            userStorage = localStorage.getItem("UserConnect");
+            var user = JSON.parse(userStorage);
+            let user_id = user.id;
+
+            userEmail = localStorage.getItem("Email");
+            if (userEmail !== null && userEmail !== undefined && userEmail !== '') {
+                enterUser(userEmail);
+
+                api = `https://localhost:7298/api/Users/${user_id}`;
+                ajaxCall("GET", api, "", PlayList_SucceesCB, PlayList_ErrorCB);
+                return false;
+            }
+            else {
+                document.getElementById('disconnect').style.display = 'none';
+                setTimeout(function () {
+                    window.location.href = "index.html";
+                }, 1000);
+            }
+            if (userEmail == '"admin@gmail.com"') {
+                document.getElementById('mngpage').style.display = 'block';
+            }
+
+        });
+
+
+        function enterUser(userEmail) {
+
+            document.getElementById('disconnect').style.display = 'block';
+            document.getElementById('signin').style.display = 'none';
+
+        }
+
+
+
+        function getYouTubeVideoURL(songName, artistName) {
+            // Replace 'YOUR_API_KEY' with your actual YouTube API key
+            var apiKey = 'AIzaSyC72k1gJgI6HSqDBRb_c4TQgkMrOh_5Ts8';
+
+            // Construct the search query using the song and artist names
+            var query = songName + ' ' + artistName;
+
+            // AJAX call to the YouTube Data API
+            $.ajax({
+                url: 'https://www.googleapis.com/youtube/v3/search',
+                type: 'GET',
+                data: {
+                    key: apiKey,
+                    q: query,
+                    part: 'snippet',
+                    maxResults: 1
+                },
+                success: function (data) {
+                    // On success, get the video ID of the first result
+                    var videoList = data.items;
+                    if (videoList.length > 0) {
+                        var videoId = videoList[0].id.videoId;
+                        var videoUrl = 'https://www.youtube.com/watch?v=' + videoId;
+
+                        // Open the YouTube video URL in a new tab/window
+                        window.open(videoUrl, '_blank');
+                    } else {
+                        alert('No videos found for the given song and artist.');
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    // On error, display an error message
+                    alert('Error searching for the video: ' + textStatus + ' - ' + errorThrown);
+                }
+            });
+        }
+
+
+
+
+        function disConnect() {
+
+            document.getElementById('signin').style.display = 'block';
+            document.getElementById('disconnect').style.display = 'none';
+
+            localStorage.clear("Email");
+            localStorage.clear("Data");
+            localStorage.clear("searchParameters");
+        }
+
+        function PlayList_SucceesCB(data) {
+            userStorage = localStorage.getItem("UserConnect");
+            var user = JSON.parse(userStorage);
+
+            let str = ""; // Initialize an empty string to store the HTML
+
+            for (const dictionary of data) {
+
+                str += '<li>';
+                str += `<p style="color: black;">${dictionary.song}</p>`;
+                str += `<p class="sm-hide" style="color: black;">${dictionary.artist.name}</p>`;
+                str += `<a href="songPage.html" class="sm-text-right" style="color: black; text-decoration: none;">Go Lyrics</a>`;
+                str += `<p style="width: 30px;"></p>`;
+                str += `<img src="../img/youtube(2).png" class="sm-hide" onclick="getYouTubeVideoURL('${dictionary.song}', '${dictionary.artist.name}')" style="width: 50px; margin-right: auto; cursor:pointer;"  />`; 
+                str += `<a id="btn ${dictionary.id}" onclick="onDeleteButtonClick(${user.id}, ${dictionary.id})" style="color: red; text-decoration: none; font-family: cursive;cursor: pointer">Delete</a>`;
+                str += '</li>';
+            }
+
+            // Append the generated HTML to the music-list ul element
+            const musicListUl = $('.music-list');
+            musicListUl.empty().append(str);
+
+            // Attach event listeners to the generated li elements
+            musicListUl.find('li').on('click', function () {
+                const index = musicListUl.find('li').index(this);
+                const dictionary = data[index];
+
+                console.log('Clicked:', dictionary.song);
+
+                $('.text-container h1').text(dictionary.song);
+                $('.text-container h4').text(' ' + dictionary.artist.name);
+
+                localStorage.setItem("STL", JSON.stringify(dictionary.id)); //---- Transferring the song data to songPage
+            });
+
+            musicListUl.find('li').on('mouseover', function () {
+                $(this).css('background-color', 'lightblue');
+            });
+
+            musicListUl.find('li').on('mouseout', function () {
+                $(this).css('background-color', '');
+            });
+        }
+
+        function PlayList_ErrorCB(err) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+            })
+        }
+
+
+        function onDeleteButtonClick(user_id, song_id) {
+            ids = {
+                User_id: user_id,
+                Song_id: song_id
+            }
+
+            api = 'https://localhost:7298/api/PlayLists';
+
+            ajaxCall("DELETE", api, JSON.stringify(ids), Delete_SongToPlaylistSucceesCB, Delete_SongToPlaylistErrorCB);
+            return false;
+
+        }
+
+
+        function Delete_SongToPlaylistSucceesCB() {
+            userStorage = localStorage.getItem("UserConnect");
+            var user = JSON.parse(userStorage);
+            let user_id = user.id
+
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: 'The song has been successfully DELETED from the playlist!',
+                showConfirmButton: false,
+                timer: 1500
+            })
+
+            api = `https://localhost:7298/api/Users/${user_id}`;
+            ajaxCall("GET", api, "", PlayList_SucceesCB, PlayList_ErrorCB);
+            return false;
+
+
+
+        }
+
+        function Delete_SongToPlaylistErrorCB() {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+            })
+        }
+
+
+
+
+
+    </script>
+
+</head>
+<body>
+
+    <!-- Loader -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+
+    <div class="tm-main">
+
+        <div class="tm-welcome-section">
+            <div class="container tm-navbar-container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <nav class="navbar navbar-expand-sm">
+                            <ul class="navbar-nav ml-auto" style="background-color:none">
+                                <li id="myil" class="nav-item active">
+                                    <a href="index.html" class="nav-link tm-nav-link tm-text-white active">Home</a>
+                                </li>
+                                <li id="myil" class="nav-item active">
+                                    <a href="artistList.html" class="nav-link tm-nav-link tm-text-white">Artists</a>
+                                </li>
+                                <li id="myil" class="nav-item active">
+                                    <a href="quizz.html" class="nav-link tm-nav-link tm-text-white">Quiz</a>
+                                </li>
+                                <li id="myil" class="nav-item active">
+                                    <a href="PlayList_user.html" class="nav-link tm-nav-link tm-text-white">Playlist</a>
+                                </li>
+                                <li id="myil" class="nav-item">
+                                    <a href="about.html" class="nav-link tm-nav-link tm-text-white">About</a>
+                                </li>
+                                <li id="myil" class="nav-item">
+                                    <a id="mngpage" class="nav-link tm-nav-link tm-text-white open-button" href="ManagementPage.html" onclick="" style="display:none">Management</a>
+                                </li>
+                                <li id="myil" class="nav-item">
+                                    <a id="signin" class="nav-link tm-nav-link tm-text-white open-button" href="#" onclick="openForm()">Sign In</a>
+                                </li>
+                                <li id="myil" class="nav-item">
+                                    <a id="disconnect" class="nav-link tm-nav-link tm-text-white open-button" href="#" onclick="disConnect()" style="display:none">Disconnect</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container text-center tm-welcome-container">
+                <div class="tm-welcome">
+                    <i class="fas tm-fa-big fa-music tm-fa-mb-big"></i>
+                    <h1 class="text-uppercase mb-3 tm-site-name"style="font: revert;">MY Playlist</h1>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <section class="content">
+            <section class="music-details">
+                <ul class="music-list">
+                    <!-- Songs will be dynamically added here -->
+                </ul>
+            </section>
+        </section>
+
+
+        </div>
+    </div> <!-- .main -->
+    <!-- load JS -->
+    <script>
+
+        /* DOM is ready
+        ------------------------------------------------*/
+        $(function () {
+
+            if (renderPage) {
+                $('body').addClass('loaded');
+            }
+
+            $('.tm-current-year').text(new Date().getFullYear());  // Update year in copyright
+        });
+
+    </script>
+</body>
+</html>
