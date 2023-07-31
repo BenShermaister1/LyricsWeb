@@ -1,0 +1,234 @@
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\bin\Debug\net6.0\appsettings.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\bin\Debug\net6.0\LPServer.staticwebassets.runtime.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\bin\Debug\net6.0\LPServer.exe
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\bin\Debug\net6.0\LPServer.deps.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\bin\Debug\net6.0\LPServer.runtimeconfig.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\bin\Debug\net6.0\LPServer.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\bin\Debug\net6.0\LPServer.pdb
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\obj\Debug\net6.0\LPServer.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\obj\Debug\net6.0\LPServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\obj\Debug\net6.0\LPServer.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\obj\Debug\net6.0\LPServer.AssemblyInfo.cs
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\obj\Debug\net6.0\LPServer.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\obj\Debug\net6.0\LPServer.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\obj\Debug\net6.0\staticwebassets\msbuild.LPServer.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\obj\Debug\net6.0\staticwebassets\msbuild.build.LPServer.props
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.LPServer.props
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.LPServer.props
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\obj\Debug\net6.0\scopedcss\bundle\LPServer.styles.css
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\obj\Debug\net6.0\LPServer.csproj.CopyComplete
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\obj\Debug\net6.0\LPServer.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\obj\Debug\net6.0\refint\LPServer.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\obj\Debug\net6.0\LPServer.pdb
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\obj\Debug\net6.0\LPServer.genruntimeconfig.cache
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\obj\Debug\net6.0\ref\LPServer.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\obj\Debug\net6.0\LPServer.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject\LPServer\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\shlom\Desktop\LPClient\LPServer\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\shlom\Desktop\LPClient\LPServer\bin\Debug\net6.0\appsettings.json
+C:\Users\shlom\Desktop\LPClient\LPServer\bin\Debug\net6.0\LPServer.staticwebassets.runtime.json
+C:\Users\shlom\Desktop\LPClient\LPServer\bin\Debug\net6.0\LPServer.exe
+C:\Users\shlom\Desktop\LPClient\LPServer\bin\Debug\net6.0\LPServer.deps.json
+C:\Users\shlom\Desktop\LPClient\LPServer\bin\Debug\net6.0\LPServer.runtimeconfig.json
+C:\Users\shlom\Desktop\LPClient\LPServer\bin\Debug\net6.0\LPServer.dll
+C:\Users\shlom\Desktop\LPClient\LPServer\bin\Debug\net6.0\LPServer.pdb
+C:\Users\shlom\Desktop\LPClient\LPServer\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\shlom\Desktop\LPClient\LPServer\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\shlom\Desktop\LPClient\LPServer\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\shlom\Desktop\LPClient\LPServer\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\shlom\Desktop\LPClient\LPServer\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\shlom\Desktop\LPClient\LPServer\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\shlom\Desktop\LPClient\LPServer\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\shlom\Desktop\LPClient\LPServer\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\shlom\Desktop\LPClient\LPServer\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\shlom\Desktop\LPClient\LPServer\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\shlom\Desktop\LPClient\LPServer\obj\Debug\net6.0\LPServer.csproj.AssemblyReference.cache
+C:\Users\shlom\Desktop\LPClient\LPServer\obj\Debug\net6.0\LPServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shlom\Desktop\LPClient\LPServer\obj\Debug\net6.0\LPServer.AssemblyInfoInputs.cache
+C:\Users\shlom\Desktop\LPClient\LPServer\obj\Debug\net6.0\LPServer.AssemblyInfo.cs
+C:\Users\shlom\Desktop\LPClient\LPServer\obj\Debug\net6.0\LPServer.csproj.CoreCompileInputs.cache
+C:\Users\shlom\Desktop\LPClient\LPServer\obj\Debug\net6.0\LPServer.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\shlom\Desktop\LPClient\LPServer\obj\Debug\net6.0\LPServer.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\shlom\Desktop\LPClient\LPServer\obj\Debug\net6.0\staticwebassets\msbuild.LPServer.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\shlom\Desktop\LPClient\LPServer\obj\Debug\net6.0\staticwebassets\msbuild.build.LPServer.props
+C:\Users\shlom\Desktop\LPClient\LPServer\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.LPServer.props
+C:\Users\shlom\Desktop\LPClient\LPServer\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.LPServer.props
+C:\Users\shlom\Desktop\LPClient\LPServer\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\shlom\Desktop\LPClient\LPServer\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\shlom\Desktop\LPClient\LPServer\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\shlom\Desktop\LPClient\LPServer\obj\Debug\net6.0\scopedcss\bundle\LPServer.styles.css
+C:\Users\shlom\Desktop\LPClient\LPServer\obj\Debug\net6.0\LPServer.csproj.CopyComplete
+C:\Users\shlom\Desktop\LPClient\LPServer\obj\Debug\net6.0\LPServer.dll
+C:\Users\shlom\Desktop\LPClient\LPServer\obj\Debug\net6.0\refint\LPServer.dll
+C:\Users\shlom\Desktop\LPClient\LPServer\obj\Debug\net6.0\LPServer.pdb
+C:\Users\shlom\Desktop\LPClient\LPServer\obj\Debug\net6.0\LPServer.genruntimeconfig.cache
+C:\Users\shlom\Desktop\LPClient\LPServer\obj\Debug\net6.0\ref\LPServer.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\bin\Debug\net6.0\appsettings.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\bin\Debug\net6.0\LPServer.staticwebassets.runtime.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\bin\Debug\net6.0\LPServer.exe
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\bin\Debug\net6.0\LPServer.deps.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\bin\Debug\net6.0\LPServer.runtimeconfig.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\bin\Debug\net6.0\LPServer.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\bin\Debug\net6.0\LPServer.pdb
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\obj\Debug\net6.0\LPServer.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\obj\Debug\net6.0\LPServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\obj\Debug\net6.0\LPServer.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\obj\Debug\net6.0\LPServer.AssemblyInfo.cs
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\obj\Debug\net6.0\LPServer.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\obj\Debug\net6.0\LPServer.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\obj\Debug\net6.0\LPServer.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\obj\Debug\net6.0\staticwebassets\msbuild.LPServer.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\obj\Debug\net6.0\staticwebassets\msbuild.build.LPServer.props
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.LPServer.props
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.LPServer.props
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\obj\Debug\net6.0\scopedcss\bundle\LPServer.styles.css
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\obj\Debug\net6.0\LPServer.csproj.CopyComplete
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\obj\Debug\net6.0\LPServer.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\obj\Debug\net6.0\refint\LPServer.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\obj\Debug\net6.0\LPServer.pdb
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\obj\Debug\net6.0\LPServer.genruntimeconfig.cache
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\ShlomoLyricsProject\LPServer\obj\Debug\net6.0\ref\LPServer.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\bin\Debug\net6.0\appsettings.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\bin\Debug\net6.0\LPServer.staticwebassets.runtime.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\bin\Debug\net6.0\LPServer.exe
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\bin\Debug\net6.0\LPServer.deps.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\bin\Debug\net6.0\LPServer.runtimeconfig.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\bin\Debug\net6.0\LPServer.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\bin\Debug\net6.0\LPServer.pdb
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\obj\Debug\net6.0\LPServer.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\obj\Debug\net6.0\LPServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\obj\Debug\net6.0\LPServer.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\obj\Debug\net6.0\LPServer.AssemblyInfo.cs
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\obj\Debug\net6.0\LPServer.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\obj\Debug\net6.0\LPServer.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\obj\Debug\net6.0\LPServer.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\obj\Debug\net6.0\staticwebassets\msbuild.LPServer.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\obj\Debug\net6.0\staticwebassets\msbuild.build.LPServer.props
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.LPServer.props
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.LPServer.props
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\obj\Debug\net6.0\scopedcss\bundle\LPServer.styles.css
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\obj\Debug\net6.0\LPServer.csproj.CopyComplete
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\obj\Debug\net6.0\LPServer.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\obj\Debug\net6.0\refint\LPServer.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\obj\Debug\net6.0\LPServer.pdb
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\obj\Debug\net6.0\LPServer.genruntimeconfig.cache
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723\LPServer\obj\Debug\net6.0\ref\LPServer.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\bin\Debug\net6.0\appsettings.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\bin\Debug\net6.0\LPServer.staticwebassets.runtime.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\bin\Debug\net6.0\LPServer.exe
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\bin\Debug\net6.0\LPServer.deps.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\bin\Debug\net6.0\LPServer.runtimeconfig.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\bin\Debug\net6.0\LPServer.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\bin\Debug\net6.0\LPServer.pdb
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\obj\Debug\net6.0\LPServer.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\obj\Debug\net6.0\LPServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\obj\Debug\net6.0\LPServer.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\obj\Debug\net6.0\LPServer.AssemblyInfo.cs
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\obj\Debug\net6.0\LPServer.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\obj\Debug\net6.0\LPServer.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\obj\Debug\net6.0\LPServer.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\obj\Debug\net6.0\staticwebassets\msbuild.LPServer.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\obj\Debug\net6.0\staticwebassets\msbuild.build.LPServer.props
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.LPServer.props
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.LPServer.props
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\obj\Debug\net6.0\scopedcss\bundle\LPServer.styles.css
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\obj\Debug\net6.0\LPServer.csproj.CopyComplete
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\obj\Debug\net6.0\LPServer.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\obj\Debug\net6.0\refint\LPServer.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\obj\Debug\net6.0\LPServer.pdb
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\obj\Debug\net6.0\LPServer.genruntimeconfig.cache
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 230723 1618\LPServer\obj\Debug\net6.0\ref\LPServer.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\bin\Debug\net6.0\appsettings.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\bin\Debug\net6.0\LPServer.staticwebassets.runtime.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\bin\Debug\net6.0\LPServer.exe
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\bin\Debug\net6.0\LPServer.deps.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\bin\Debug\net6.0\LPServer.runtimeconfig.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\bin\Debug\net6.0\LPServer.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\bin\Debug\net6.0\LPServer.pdb
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\obj\Debug\net6.0\LPServer.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\obj\Debug\net6.0\LPServer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\obj\Debug\net6.0\LPServer.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\obj\Debug\net6.0\LPServer.AssemblyInfo.cs
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\obj\Debug\net6.0\LPServer.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\obj\Debug\net6.0\LPServer.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\obj\Debug\net6.0\LPServer.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\obj\Debug\net6.0\staticwebassets\msbuild.LPServer.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\obj\Debug\net6.0\staticwebassets\msbuild.build.LPServer.props
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.LPServer.props
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.LPServer.props
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\obj\Debug\net6.0\scopedcss\bundle\LPServer.styles.css
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\obj\Debug\net6.0\LPServer.csproj.CopyComplete
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\obj\Debug\net6.0\LPServer.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\obj\Debug\net6.0\refint\LPServer.dll
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\obj\Debug\net6.0\LPServer.pdb
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\obj\Debug\net6.0\LPServer.genruntimeconfig.cache
+C:\Users\User\Desktop\מדמח\שנה ג\סמסטר ב\צד שרת חוזר\LyricsProject 240723\LPServer\obj\Debug\net6.0\ref\LPServer.dll
